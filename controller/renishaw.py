@@ -2,6 +2,7 @@ import re
 import sqlite3 as sq
 
 
+
 def create(parameters: dict, name_op):
     """
     Создание программы renishaw для привязки.
@@ -199,7 +200,7 @@ def get_sample(num: int, parameters) -> str:
     else:
         table_v = "old_sample"
 
-    con = sq.connect("model/model.db")
+    con = sq.connect("C:\\python3.7\\NCEditor\\model\\model.db")
     cur = con.cursor()
     tmp = f"""SELECT {table_v} FROM GoProbe WHERE id == {num}"""
     cur.execute(tmp)
